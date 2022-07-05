@@ -9,7 +9,7 @@ lotto_num_list = []
 # 6개 뽑기 -> for
 for num in range(6):
     # num_list에서 한 인덱스를 뽑는다.
-    lotto_num = num_list[ran.randint(1,len_count)]
+    lotto_num = num_list[ran.randint(0,len_count)]
     # lotto_num 값이 중복되지 않도록 해당 인덱스를 제거
     num_list.remove(lotto_num)
     # lotto_num_list에 lotto_num을 append
