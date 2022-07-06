@@ -33,10 +33,10 @@ def solution(new_id):
     id_list = [ele for ele in id_list if ele!="#"]
 
     # 마침표(.)가 처음이나 끝에 위치한다면 제거
-    if id_list[0]==".":
+    if len(id_list)>=1 and id_list[0]==".": 
         del id_list[0]
     # 마지막에 오는 값 확인
-    if id_list[-1] == ".": 
+    if len(id_list)>=1 and id_list[-1]==".": 
         del id_list[-1]
 
     # 빈 문자열이라면, new_id에 "a"를 대입
@@ -60,4 +60,4 @@ def solution(new_id):
     answer = ''.join(id for id in id_list)
     return answer
 
-print(solution("...!@BaT#*..y.abcdefghijklm"))
+print(solution("=.="))
