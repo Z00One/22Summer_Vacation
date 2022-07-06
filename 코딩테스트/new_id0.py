@@ -12,53 +12,37 @@ def solution(new_id):
     
     # 마침표(.)가 2번 이상 연속된 부분을 하나의 마침표(.)로 치환
     # 문자열을 리스트화 하고 연속된 . 이 있다면 제거
-    
     # 인덱스를 하나씩 확인한다.
-    comma_count = 0
-    index = 0
-    flag = True
-    while flag:
-        # index 가 id_list의 범위를 넘어가는 순간 
-        if index >= len(id_list):
-            flag = False
+    for index in range(len(id_list) - 1):
+        comma_count = 0
+        # . 나오는 순간부터 점 카운트
+        if id_list[index] == ".":
+            # 점이 얼마나 연속적인지 카운트
+                for check in id_list[index :]:
+                    if check == ".":
+                        comma_count+=1
+                    else:
+                        break
+                # 연속적인 점의 갯수가 2개 이상이면
+                if comma_count >=2:
+                    for change in range(index+1,index+comma_count):
+                        # 처음 나온 . 말고 다른 인덱스들의 값을 바꿔준다.
+                        id_list[change] = "#"
+                    
+    # 특정 값들을 빼고 id_list를 다시 구성한다.
+    id_list = [ele for ele in id_list if ele!="#"]
 
-        elif id_list[index] == ".":
-            comma_count += 1
-            if len(id_list) < 2 or len(id_list) < index:
-                flag = False
-            elif id_list[index - 1] ==      "." and comma_count >=2:
-                for comma in range(index-comma_count + 2, index + 1):
-                    id_list[comma] = "#"
-                    # 연속되는 값이 없다면 comma_count 리셋
-                    flag = False
-            elif id_list[index+1] != "." and comma_count >=2:
-                for comma in range(index-comma_count + 2, index + 1):
-                    id_list[comma] = "#"
-                # 연속되는 값이 없다면 comma_count 리셋
-                comma_count = 0
-            # 다음 인덱스의 값이 . 이 아니고 3번 이상 카운트 됐을 경우
-
-            # 다음 인덱스의 값이 . 이 아니고 3번 미만으로 카운트 됐을 경우
-            elif id_list[index+1] != "." and comma_count <2:
-                # 연속되는 값이 없다면 comma_count 리셋
-                comma_count = 0
-        # 연속해서
-        else:
-            comma_count = 0
-        index += 1
-    id_list = [ele for ele in id_list if ele != "#"]
     # 마침표(.)가 처음이나 끝에 위치한다면 제거
-    while not flag:
+    while True:
         if len(id_list) == 0:
-            flag =True
+            break
         elif id_list[0] == ".": # 처음에 오는 값 확인
             del id_list[0]
         elif id_list[-1] == ".": # 마지막에 오는 값 확인
             del id_list[-1]
         # 처음이나 끝에 "."이 없을 때까지 반복
         else:
-            flag = True
-    
+            break
     # 빈 문자열이라면, new_id에 "a"를 대입
     if len(id_list) == 0 : id_list.append("a")
 
@@ -67,13 +51,12 @@ def solution(new_id):
         del id_list[15:]
         # 제거 후 마침표(.)가 new_id의 끝에 위치한다면 끝에 위치한 마침표(.) 문자를 제거
         if id_list[-1]==".":
-            flag = True
-            while flag:
+            while True:
                 if id_list[-1] == ".": # 마지막에 오는 값 확인
                     del id_list[-1]
                 # 처음이나 끝에 "."이 없을 때까지 반복
                 else:
-                    flag=False
+                    break
 
     # 길이가 2자 이하라면, new_id의 마지막 문자를 new_id의 길이가 3이 될 때까지 반복해서 끝에 붙임
     if len(id_list) <= 2:
@@ -84,4 +67,4 @@ def solution(new_id):
     answer = ''.join(id for id in id_list)
     return answer
 
-print(solution("z-+.^."))
+print(solution("...!@BaT#*..y.abcdefghijklm"))
