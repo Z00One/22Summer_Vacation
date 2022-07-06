@@ -4,15 +4,13 @@ def solution(new_id):
     # 문자열의 대문자를 소문자로 바꿔준다. ->lower 사용
     new_id = new_id.lower()
     id_list = []
-    # for문을 돌려서 빼면 효율이 떨어질 듯
+
     for value in new_id:
         # 알파벳 소문자, 숫자, 빼기(-), 밑줄(_), 마침표(.)를 제외한 모든 문자를 제거
         if value.islower() or value.isdigit() or value == "-" or value == "_" or value == ".":
             id_list.append(value)
     
-    # 마침표(.)가 2번 이상 연속된 부분을 하나의 마침표(.)로 치환
-    # 문자열을 리스트화 하고 연속된 . 이 있다면 제거
-    # 인덱스를 하나씩 확인한다.
+    # 마침표(.)가 2번 이상 연속된 부분 특정
     for index in range(len(id_list) - 1):
         comma_count = 0
         # . 나오는 순간부터 점 카운트
@@ -59,5 +57,3 @@ def solution(new_id):
     # 리스트를 문자열로 변환
     answer = ''.join(id for id in id_list)
     return answer
-
-print(solution("=.="))
