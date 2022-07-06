@@ -25,32 +25,19 @@ while flag:
         if input_Value % 2 == 0:
             Msg = "짝수 입니다."
             print("\t" + Msg)
-        #  3의 배수 또는 7의 배수이면 아래 Msg 출력
-
-            if input_Value % 3 == 0:
-                Msg = "3의 배수 입니다."
-                print("\t" + Msg)
-
-            elif input_Value % 7 == 0:
-                Msg = "7의 배수 입니다."
-                print("\t" + Msg)
-
-            input_count+=1
-
-        #  “짝수”or “양수” 출력        
-        elif input_Value % 2 == 1:
+        else :
             Msg = "홀수 입니다."
             print("\t" + Msg)
         #  3의 배수 또는 7의 배수이면 아래 Msg 출력
-            if input_Value % 3 == 0:
-                Msg = "3의 배수 입니다."
-                print("\t" + Msg)
 
-            elif input_Value % 7 == 0:
-                Msg = "7의 배수 입니다."
-                print("\t" + Msg)
+        if input_Value % 3 == 0:
+            Msg = "3의 배수 입니다."
+            print("\t" + Msg)
 
-            input_count+=1
+        if input_Value % 7 == 0:
+            Msg = "7의 배수 입니다."
+            print("\t" + Msg)
 
+        input_count+=1
 
-
+        
