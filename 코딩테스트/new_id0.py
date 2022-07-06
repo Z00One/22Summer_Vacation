@@ -33,35 +33,28 @@ def solution(new_id):
     id_list = [ele for ele in id_list if ele!="#"]
 
     # 마침표(.)가 처음이나 끝에 위치한다면 제거
-    while True:
-        if len(id_list) == 0:
-            break
-        elif id_list[0] == ".": # 처음에 오는 값 확인
-            del id_list[0]
-        elif id_list[-1] == ".": # 마지막에 오는 값 확인
-            del id_list[-1]
-        # 처음이나 끝에 "."이 없을 때까지 반복
-        else:
-            break
+    if id_list[0]==".":
+        del id_list[0]
+    # 마지막에 오는 값 확인
+    if id_list[-1] == ".": 
+        del id_list[-1]
+
     # 빈 문자열이라면, new_id에 "a"를 대입
     if len(id_list) == 0 : id_list.append("a")
 
     # 길이가 16자 이상이면, new_id의 첫 15개의 문자를 제외한 나머지 문자들을 모두 제거
-    elif len(id_list) >= 15 : 
+    if len(id_list) >= 15 : 
         del id_list[15:]
         # 제거 후 마침표(.)가 new_id의 끝에 위치한다면 끝에 위치한 마침표(.) 문자를 제거
-        if id_list[-1]==".":
-            while True:
-                if id_list[-1] == ".": # 마지막에 오는 값 확인
-                    del id_list[-1]
-                # 처음이나 끝에 "."이 없을 때까지 반복
-                else:
-                    break
+        if id_list[0]==".":
+            del id_list[0]
+        
+        if id_list[-1] == ".": # 마지막에 오는 값 확인
+            del id_list[-1]
 
     # 길이가 2자 이하라면, new_id의 마지막 문자를 new_id의 길이가 3이 될 때까지 반복해서 끝에 붙임
-    if len(id_list) <= 2:
-        while len(id_list) < 3:
-            id_list.append(id_list[-1])
+    while len(id_list) < 3:
+        id_list.append(id_list[-1])
     
     # 리스트를 문자열로 변환
     answer = ''.join(id for id in id_list)
