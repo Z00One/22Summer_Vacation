@@ -28,4 +28,4 @@ def solution(new_id):
         answer += answer[-1]
     return answer
 
-print(solution("...!@BaT#*..y.abcdefghijklm"))
+print(solution("=.="))
