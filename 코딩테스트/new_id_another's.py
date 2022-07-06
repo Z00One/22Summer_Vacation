@@ -27,3 +27,5 @@ def solution(new_id):
     while len(answer) < 3:
         answer += answer[-1]
     return answer
+
+print(solution("...!@BaT#*..y.abcdefghijklm"))
