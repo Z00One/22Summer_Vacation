@@ -58,8 +58,8 @@ avg = sum / len(List)
 # 합계, 평균, 최대 값, 최소 값 출력 하기
 print("최소 값 :", minimum_value)
 print("최대 값 :", maximum)
-print("합계 :", sum)
-print("평균 :", avg)
+print("합계 \t:", sum)
+print("평균 \t:", avg)
 
 # 작은 값부터 나열하기
 List = sort(List, minimum_value, maximum)
