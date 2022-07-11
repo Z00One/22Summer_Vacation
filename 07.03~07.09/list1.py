@@ -10,5 +10,5 @@ list1 = [random.randint(1,20) for value in range(1,last_value+1)] # [1, 2, 3, 4,
 #     index += 1
 sum = 0
 print(list1)
-a = [ele for ele in list1 if ele >5 and ele <= 10]
-print((a))
+a = [ele for ele in list1 if ele >5 and ele <= 10 ]
+print(a)
