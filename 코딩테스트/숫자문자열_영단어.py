@@ -9,6 +9,6 @@ def solution(s):
             alpha_count+=value
         # 카운트하는 도중에 영단어가 완성이 된다면 해당하는 숫자로 바꿔준다.
         if alpha_count in dict.keys():
-            s=s.replace(alpha_count,dict[alpha_count])
+            s = s.replace(alpha_count,dict[alpha_count])
             alpha_count = ""
     return int(s)
