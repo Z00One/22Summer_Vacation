@@ -1,7 +1,6 @@
 import random
 
 # sort 함수 정의
-# sort 함수 정의
 def sort(list_value):
     # 비교할 요소 정하기, 마지막에는 결국 제일 큰값이 올 것이기 때문에 마지막 index에서는 반복하지 않는다.
     for index in range(len(list_value)-1):
