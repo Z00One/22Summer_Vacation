@@ -5,6 +5,12 @@ import random
 answer           =   []         # 답을 담아줄 변수
 Range_List       =   ["0"] * 3    # for 문의 range를 조절할 변수
 
+
+
+
+
+
+# ########################################################## 교수님 말씀 의미없는(효율적이지 않은 것은 하지 마라) --> while 문이 효율적이다.
 # 리스트에 3가지 값이 중복이 되지 않도록 출력 (for 써보기)
 # for 문의 range 의 길이가 계속 길어지도록
 for answer_index in Range_List:  # list 자리에 range 함수를 쓸 때 range(value) 의 value 값은 초기 값대로만 적용된다. --> list를 사용한다.
@@ -15,6 +21,13 @@ for answer_index in Range_List:  # list 자리에 range 함수를 쓸 때 range(
         continue
     # 없으면 추가
     answer.append(randomValue)
+
+
+
+
+
+
+
 
 
 ########## 키보드로부터 0~9사이 정수 3개를 입력 받고 결과 값을 출력
