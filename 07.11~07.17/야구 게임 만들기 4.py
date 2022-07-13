@@ -1,8 +1,12 @@
-##### 중복되는 것들 함수 선언
-def EndMsg(MsgValue0, MsgValue1) :
-    print(MsgValue0 , MsgValue1 , "\n정답은", answer[0], answer[1], answer[2], "이에요")
+##### 함수 선언
+# 종료시 중복되는 함수
+def endMsg(msgValue0, msgValue1) :
+    print(msgValue0 , msgValue1 , "\n정답은", answer[0], answer[1], answer[2], "이에요")
     # 반복문 종료하기 위해 False return
     return False
+
+# 스트라이크, 볼, 아웃을 판별하는 함수
+def 
 
 ########## 게임 시작 시 0~9사이 정수 중 중복 값이 없는 난수 3개 생성
 # random 호출
@@ -59,12 +63,12 @@ while flag:
 
     # – Strike out == 2
     if out_count      >=2:
-        flag = EndMsg("아웃횟수 초과","아까비 졌네용")  
+        flag = endMsg("아웃횟수 초과", "아까비 졌네용")  
 
     # - 3 Strike
     elif strike_count == 3:
-        flag = EndMsg("정답 입니다","축하해요 이겼어요")
+        flag = endMsg("정답 입니다",   "축하해요 이겼어요")
 
     # – 시도 횟수 >= 5
     elif try_count    >=5:
-        flag = EndMsg("시도횟수 초과","아까비 졌네용")
+        flag = endMsg("시도횟수 초과", "아까비 졌네용")
