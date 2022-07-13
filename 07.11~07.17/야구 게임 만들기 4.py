@@ -21,7 +21,7 @@ while len(answer) < 3 :
 # 필요한 변수 선언
 try_count   =   1   # 횟수 카운트 변수
 out_count   =   0   # 아웃 카운트 변수
-flag = True
+flag        =   True
 
 while flag:
 
@@ -50,17 +50,15 @@ while flag:
     if strike_count == 0 and ball_count == 0:
         out_count += 1
     ##### 결과 값 출력하기
-    print("Strike :", strike_count, "Ball :", ball_count, "Out :", out_count)
-    print()
+    print("Strike :", strike_count, "Ball :", ball_count, "Out :", out_count ,"\n")
     
     # 한 번 반복이 끝나면 시도횟수 카운트
-
     try_count += 1
 
     ##### 종료하는 경우
 
     # – Strike out == 2
-    if out_count>=2:
+    if out_count      >=2:
         flag = EndMsg("아웃횟수 초과","아까비 졌네용")  
 
     # - 3 Strike
@@ -68,5 +66,5 @@ while flag:
         flag = EndMsg("정답 입니다","축하해요 이겼어요")
 
     # – 시도 횟수 >= 5
-    elif try_count>=5:
+    elif try_count    >=5:
         flag = EndMsg("시도횟수 초과","아까비 졌네용")
