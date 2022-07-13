@@ -27,7 +27,7 @@ judgeValue = 11 - (sum % 11)
 
 # judgeValue 가 두자릿수일 경우 일의 자리수만 이용
 if judgeValue >= 10:
-    judgeValue -= 10
+    judgeValue -= 10 # or %= 연산자 사용
 
 ## judgeValue가 마지막 자릿수랑 같은 경우
 if judgeValue == int(myNum[-1]) :
