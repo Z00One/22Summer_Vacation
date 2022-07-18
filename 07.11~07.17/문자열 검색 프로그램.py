@@ -25,8 +25,8 @@ for lineValue in range(lineRange):
             # 문자열 뒤에 공백이 오는 경우  ex) "hello    "
             if wordValue:
                 allWord.append(wordValue)
-                if wordValue == searchString
-                wordValue = ""
+                if wordValue == searchString:
+                    wordValue = ""
 
         # 공백이 아닌 경우
         else:
