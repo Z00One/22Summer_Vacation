@@ -1,14 +1,20 @@
+def bubbleSort(listValue):                                  # 버블 소팅 오름차순 정렬
+    for index in range(len(listValue)-1):
+        for nextIndex in range(index + 1, len(listValue)):  # set된 index의 원소와 뒤에 nextIndex의 원소를 비교한다. 
+            if listValue[index] > listValue[nextIndex]:     # index의 원소가 더 크다면 자리를 바꿔준다.
+                temp = listValue[index]
+                listValue[index] = listValue[nextIndex]
+                listValue[nextIndex] = temp
+    return listValue
+
 import random
-randomValues = []
+randomValueList = []
 
 # 난수를 발생시켜 하나의 리스트에 담는다.
-while len(randomValues) < 25:
+while len(randomValueList) < 25:
     randomValue = random.randint(1,50)
-    if randomValue not in randomValues:
-        randomValues.append(randomValue)
-
-# 전체 최소, 최대, 중간값
-allValues = []
+    if randomValue not in randomValueList:
+        randomValueList.append(randomValue)
 
 colList = [[], [], [], [], []]  # 행 리스트 선언
 rowList = [[], [], [], [], []]  # 열 리스트 선언
@@ -16,18 +22,16 @@ rowList = [[], [], [], [], []]  # 열 리스트 선언
 # 리스트에 있는 난수를 행, 열 리스트의 5개의 리스트, 전제 값 리스트에 넣어준다.
 for col in range(5):
     for row in range(5):
-        colList[col].append(randomValues[0])    # 행 리스트
-        rowList[row].append(randomValues[0])    # 열 리스트
-        allValues.append(randomValues[0])       # 모든 값 리스트
-        print("\t\t", randomValues[0], end="")
-        randomValues.remove(randomValues[0])    ############### 교수님께서 다시 해보라고 말씀하신 부분
+        colList[col].append(randomValueList[col * 5 + row])    # 행 리스트
+        rowList[row].append(randomValueList[col * 5 + row])    # 열 리스트
+        print("\t\t", randomValueList[col * 5 + row], end="")
     print()
 
 # 리스트 정렬
 for index in range(5):                          ############### 교수님께서 다시 해보라고 말씀하신 부분
-    colList[index].sort()   # 행 리스트 정렬
-    rowList[index].sort()   # 열 리스트 정렬
-allValues.sort()            # 모든 값 리스트 정렬
+    bubbleSort(colList[index])   # 행 리스트 정렬
+    bubbleSort(rowList[index])   # 열 리스트 정bubbleSort(colList)         
+bubbleSort(randomValueList)      # 난수 리스트 정렬
 
 # 출력하기
 # 열
@@ -45,8 +49,7 @@ for list in rowList:
     print(list[2],end="\t\t")
 
 # 행
-print("\n")
-print("행")
+print("\n\n행")
 print("최소값", "\t\t", "최대값", "\t", "중간값")
 for list in colList:
     print(" ", list[0], "\t\t", list[4], "\t\t", list[2])
@@ -54,6 +57,6 @@ for list in colList:
 # 전체
 print()
 print("전체")
-print("최소값","\t", allValues[0])
-print("최대값","\t", allValues[24])
-print("중간값","\t", allValues[12])
+print("최소값","\t", randomValueList[0])
+print("최대값","\t", randomValueList[24])
+print("중간값","\t", randomValueList[12])
