@@ -1,5 +1,5 @@
 def bubbleSort(listValue):                                  # 버블 소팅 오름차순 정렬
-    for index in range(len(listValue)-1):
+    for index in range(len(listValue)-1):                   # index == len(listValue) 일 때는 이미 소팅이 끝나 비교를 할 수 없는 상황
         for nextIndex in range(index + 1, len(listValue)):  # set된 index의 원소와 뒤에 nextIndex의 원소를 비교한다. 
             if listValue[index] > listValue[nextIndex]:     # index의 원소가 더 크다면 자리를 바꿔준다.
                 temp = listValue[index]
