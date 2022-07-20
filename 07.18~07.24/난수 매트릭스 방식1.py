@@ -6,7 +6,6 @@ while len(randomValues) < 25:
     randomValue = random.randint(1,50)
     randomValues.append(randomValue) if randomValue not in randomValues else 2
         
-
 colList = [[], [], [], [], []]  # 행 리스트 선언
 rowList = [[], [], [], [], []]  # 열 리스트 선언
 
