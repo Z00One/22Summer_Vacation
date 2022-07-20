@@ -4,8 +4,8 @@ randomValues = []
 # 난수를 발생시켜 하나의 리스트에 담는다.
 while len(randomValues) < 25:
     randomValue = random.randint(1,50)
-    if randomValue not in randomValues:
-        randomValues.append(randomValue)
+    randomValues.append(randomValue) if randomValue not in randomValues else 2
+        
 
 colList = [[], [], [], [], []]  # 행 리스트 선언
 rowList = [[], [], [], [], []]  # 열 리스트 선언
