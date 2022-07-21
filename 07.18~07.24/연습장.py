@@ -43,14 +43,49 @@
 # s.sort(reverse=True)
 # print("".join(s))
 
-def solution(strings, n):
-    char = sorted([value[n] + value for value in strings])
-    dict = {value : value[n] + value  for value in strings}
-    answer = []
-    for charValue in char:
-        for key, value in dict.items():
-            if value == charValue:
-                answer.append(key) 
-    return answer
+# def solution(strings, n):
+#     char = sorted([value[n] + value for value in strings])
+#     dict = {value : value[n] + value  for value in strings}
+#     answer = []
+#     for charValue in char:
+#         for key, value in dict.items():
+#             if value == charValue:
+#                 answer.append(key) 
+#     return answer
 
-print(solution(["abce", "abcd", "cdx"], 2))
+# print(solution(["abce", "abcd", "cdx"], 2))
+
+# if []: # 빈 리스트 --> Falsy
+#     print(22)
+
+def solution(arr):
+    answer = ""
+    for value in arr:
+        if answer[-1:] != str(value): ##### 빈리스트에는 [-1:] 로써 인덱싱 가능
+            answer += str(value)
+    list = []
+    for value in answer:
+        list.append(int(value))
+    
+    return list
+    # answer = []
+
+    # for index1 in range(len(arr) - 1):
+    #     if arr[index1] == "":
+    #         continue
+
+    #     for index2 in range(index1 + 1, len(arr)):
+    #         if arr[index1] == arr[index2]:
+    #             arr[index2] = ""
+
+    #         elif arr[index1] != arr[index2] and arr[index1] != "":
+    #             answer.append(arr[index1])
+    #             break
+    # return answer
+
+print(solution([4,4,4,3,3]))
+
+# print(str([4,4,4,3,3]))
+# a = "11231234"
+# while "11" in a:
+#     a.replace("11","1")
