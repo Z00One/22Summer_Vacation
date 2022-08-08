@@ -16,7 +16,7 @@ t.pendown()
 count = 0
 while count < 400:
     # rgb값 난수로 정하기
-    r           = random.randint(0,20)
+    r           = random.randint(0,255)
     g           = random.randint(0,20)
     b           = random.randint(20,255)
 
