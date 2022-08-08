@@ -11,4 +11,4 @@ def quickSort(listValue):
     
     return quickSort(leftSide) + [pivot] + quickSort(rightSide)         # 사용자 함수 a를 정의할 때 구현부분에서 a를 사용 가능
                                                                         # --> 굳이 반복문을 사용하지 않아도 반복의 개념 사용 가능
-print(quickSort([2,1,5,6]))
+print(quickSort([5,2,1,5,6]))
