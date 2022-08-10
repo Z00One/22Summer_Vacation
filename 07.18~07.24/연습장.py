@@ -58,16 +58,17 @@
 # if []: # 빈 리스트 --> Falsy
 #     print(22)
 
-def solution(arr):
-    answer = ""
-    for value in arr:
-        if answer[-1:] != str(value): ##### 빈리스트에는 [-1:] 로써 인덱싱 가능
-            answer += str(value)
-    list = []
-    for value in answer:
-        list.append(int(value))
+# def solution(arr):
+#     answer = ""
+#     for value in arr:
+#         if answer[-1:] != str(value): ##### 빈리스트에는 [-1:] 로써 인덱싱 가능
+#             answer += str(value)
+#     list = []
+#     for value in answer:
+#         list.append(int(value))
     
-    return list
+#     return list
+
     # answer = []
 
     # for index1 in range(len(arr) - 1):
@@ -83,9 +84,15 @@ def solution(arr):
     #             break
     # return answer
 
-print(solution([4,4,4,3,3]))
+# print(solution([4,4,4,3,3]))
 
 # print(str([4,4,4,3,3]))
 # a = "11231234"
 # while "11" in a:
 #     a.replace("11","1")
+
+# print(type(3) == '<class int>')
+
+list = [input("값을 입력하세요") for index in range(int(input("몇 개 입력해요?")))]
+
+print(list)
