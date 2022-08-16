@@ -37,7 +37,7 @@ def blind(wordValue, BLINDRANGE = 2, BLIND = '_'):
         charIndex = randint(0, len(blindValueList) - 1)
         
         if blindValueList[charIndex] == BLIND:                      # 이미 블라인드 처리된 원소의 경우
-            while blindValueList[charIndex] != BLIND:               # 블라인드 처리 안된 원소의 인덱스가 나올 때까지 반복
+            while blindValueList[charIndex] == BLIND:               # 블라인드 처리 안된 원소의 인덱스가 나올 때까지 반복
                 charIndex = randint(0, len(blindValueList) - 1)
 
         blindValueList[charIndex] = BLIND
