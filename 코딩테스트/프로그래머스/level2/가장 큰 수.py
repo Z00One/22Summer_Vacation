@@ -2,17 +2,20 @@
 def solution(numbers):
     numbers = sorted([str(num) for num in numbers])
     numbers.sort(key = len)
+    compareValue     = len(numbers[-1])
+    # numbers.sort(reverse=True)
     
-    numbersDict = {key : int((key * len(numbers[-1]))[:len(numbers[-1])]) for key in numbers}
-    compare     = [int((num * len(numbers[-1]))[:len(numbers[-1])]) for num in numbers]
+    numbersDict = {key : int((key * compareValue)[:compareValue]) for key in numbers}
+    compare     = [num for num in numbersDict.values()]
     compare.sort(reverse=True)
 
     answer = ''
     for num in compare:
         for key, value in numbersDict.items():
-            if num == value and key in numbers:
+            if num == value:
                 answer += key
-                numbers.remove(key)
+                numbersDict[key] = 0
+                break
     
     return answer
     
@@ -34,5 +37,5 @@ def solution(numbers):
     # numbers = numbers[len(compare)]
     
     # return numbers
-print(solution([3, 3, 333, 34]))
+print(solution( [ 67,676,677,]))
     
