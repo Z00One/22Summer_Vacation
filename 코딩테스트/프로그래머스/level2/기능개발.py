@@ -18,7 +18,7 @@ def solution(progresses, speeds):
     
     for index in range(len(progresses)):
         if not(count) :
-            dayValue = (100 - progresses[index]) // speeds[index]
+            dayValue = int((100 - progresses[index]) // speeds[index]) + 1
 
         if (progresses[index] + (dayValue * speeds[index])) < 100:
             answer.append(count)
