@@ -5,7 +5,7 @@ def solution(numbers):
     compareValue     = len(numbers[-1])
     # numbers.sort(reverse=True)
     
-    numbersDict = {key : int((key * compareValue)[:compareValue]) for key in numbers}
+    numbersDict = {key : int((key * compareValue)[:3]) for key in numbers}
     compare     = [num for num in numbersDict.values()]
     compare.sort(reverse=True)
 
